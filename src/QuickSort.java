@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class QuickSort {
 /*
  *快速排序，采用分治法，选择基准数，用两个变量指向两头，先从右开始依次遍历比基准数小的，停下，再从左开始找到比
@@ -24,13 +26,16 @@ public class QuickSort {
             if (i<j)
                 swap(a,i,j);
         }
-
+        for (int k=0;k<a.length;k++){
+            System.out.print(a[k]+",");
+        }
+        System.out.println("\n");
         quickSort(a,left,i-1);
         quickSort(a,i+1,right);
     }
     public static void main(String[] args){
 
-        int[] a={7,4,8,9,6,5,3,2,1,13};
+        int[] a={7,4,3,6,9};
         quickSort(a,0,a.length-1);
 
         for (int i=0;i<a.length;i++){
